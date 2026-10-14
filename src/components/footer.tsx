@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Mail, Phone, MapPin, ShieldCheck, Lock } from 'lucide-react';
+import { GarviLogo } from './logo';
 
 export function Footer() {
   return (
@@ -11,13 +12,8 @@ export function Footer() {
           
           {/* Brand Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-black text-lg">
-                G
-              </div>
-              <span className="font-extrabold text-xl text-white tracking-tight">
-                GARVI EDUCATION
-              </span>
+            <div className="mb-5">
+              <GarviLogo variant="light" size="lg" />
             </div>
 
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm mb-6">

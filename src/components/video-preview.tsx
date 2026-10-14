@@ -89,7 +89,7 @@ export function VideoPreview({
 
               <button
                 onClick={onRegisterClick}
-                className="self-start sm:self-auto bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs sm:text-sm px-4 py-2 rounded-xl shadow-md transition-colors whitespace-nowrap"
+                className="animate-vibrate-2s self-start sm:self-auto bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-lg transition-colors whitespace-nowrap cursor-pointer"
               >
                 Register Now — ₹{price}
               </button>

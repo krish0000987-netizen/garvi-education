@@ -16,6 +16,7 @@ import { FinalCta } from '@/components/final-cta';
 import { Footer } from '@/components/footer';
 import { RegistrationModal } from '@/components/registration-modal';
 import { StickyMobileCta } from '@/components/sticky-mobile-cta';
+import { ScrollEffects } from '@/components/scroll-effects';
 import { captureUtmParamsFromUrl } from '@/lib/utm';
 
 export default function GarviLandingPage() {
@@ -44,6 +45,9 @@ export default function GarviLandingPage() {
   return (
     <div className="min-h-screen bg-white flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
       
+      {/* Dynamic Top Reading Progress Bar & Scroll Controller */}
+      <ScrollEffects />
+
       {/* Section 1 — Premium Announcement Bar */}
       <AnnouncementBar
         workshopDate={workshopDate}
@@ -78,54 +82,72 @@ export default function GarviLandingPage() {
         />
 
         {/* Section 4 — Problem and Opportunity */}
-        <ProblemOpportunity
-          onRegisterClick={openRegisterModal}
-        />
+        <div className="scroll-reveal">
+          <ProblemOpportunity
+            onRegisterClick={openRegisterModal}
+          />
+        </div>
 
         {/* Section 5 — Workshop Outcomes */}
-        <WorkshopOutcomes
-          onRegisterClick={openRegisterModal}
-        />
+        <div className="scroll-reveal">
+          <WorkshopOutcomes
+            onRegisterClick={openRegisterModal}
+          />
+        </div>
 
         {/* Section 6 — Workshop Video Preview */}
-        <VideoPreview
-          onRegisterClick={openRegisterModal}
-          price={price}
-        />
+        <div className="scroll-reveal">
+          <VideoPreview
+            onRegisterClick={openRegisterModal}
+            price={price}
+          />
+        </div>
 
         {/* Section 7 — Who Should Attend? */}
-        <WhoShouldAttend
-          onRegisterClick={openRegisterModal}
-        />
+        <div className="scroll-reveal">
+          <WhoShouldAttend
+            onRegisterClick={openRegisterModal}
+          />
+        </div>
 
         {/* Section 8 — Workshop Agenda */}
-        <WorkshopAgenda
-          onRegisterClick={openRegisterModal}
-        />
+        <div className="scroll-reveal">
+          <WorkshopAgenda
+            onRegisterClick={openRegisterModal}
+          />
+        </div>
 
         {/* Section 9 — Reviews and Social Proof */}
-        <ReviewsSocialProof />
+        <div className="scroll-reveal">
+          <ReviewsSocialProof />
+        </div>
 
         {/* Section 10 — Workshop Pricing */}
-        <PricingSection
-          onRegisterClick={openRegisterModal}
-          price={price}
-          workshopDate={workshopDate}
-          workshopTime={workshopTime}
-        />
+        <div className="scroll-reveal">
+          <PricingSection
+            onRegisterClick={openRegisterModal}
+            price={price}
+            workshopDate={workshopDate}
+            workshopTime={workshopTime}
+          />
+        </div>
 
         {/* Section 11 — FAQ Accordion */}
-        <FaqAccordion
-          price={price}
-          workshopDate={workshopDate}
-        />
+        <div className="scroll-reveal">
+          <FaqAccordion
+            price={price}
+            workshopDate={workshopDate}
+          />
+        </div>
 
         {/* Section 12 — Final Conversion Section */}
-        <FinalCta
-          onRegisterClick={openRegisterModal}
-          price={price}
-          workshopDate={workshopDate}
-        />
+        <div className="scroll-reveal">
+          <FinalCta
+            onRegisterClick={openRegisterModal}
+            price={price}
+            workshopDate={workshopDate}
+          />
+        </div>
 
       </main>
 

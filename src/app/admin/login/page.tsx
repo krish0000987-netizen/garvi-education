@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Lock, ArrowRight, AlertCircle, ShieldCheck, Sparkles } from 'lucide-react';
+import { GarviLogo } from '@/components/logo';
 
 export default function AdminLoginPage() {
   const router = useRouter();
@@ -40,12 +41,9 @@ export default function AdminLoginPage() {
     <div className="min-h-screen bg-slate-900 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-slate-800 border border-slate-700 rounded-3xl p-8 shadow-2xl text-white">
         
-        <div className="text-center mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-black text-xl mx-auto mb-3 shadow-lg shadow-blue-500/20">
-            G
-          </div>
-          <h1 className="text-2xl font-black tracking-tight">Garvi Education</h1>
-          <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold mt-1">
+        <div className="flex flex-col items-center mb-8">
+          <GarviLogo variant="light" size="lg" />
+          <p className="text-xs uppercase tracking-wider text-slate-400 font-semibold mt-3 bg-slate-900/60 px-3 py-1 rounded-full border border-slate-700">
             Administrator Portal • Rewa, MP
           </p>
         </div>

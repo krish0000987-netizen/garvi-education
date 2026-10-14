@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, ArrowRight, ShieldCheck, Phone } from 'lucide-react';
+import { GarviLogo } from './logo';
 
 interface NavbarProps {
   onRegisterClick: () => void;
@@ -33,26 +34,16 @@ export function Navbar({ onRegisterClick, price = 199 }: NavbarProps) {
     <nav
       className={`sticky top-0 z-40 w-full transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-3'
-          : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-4'
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/80 py-2.5'
+          : 'bg-white/90 backdrop-blur-sm border-b border-slate-100 py-3.5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0A192F] to-[#1D4ED8] flex items-center justify-center text-white font-black text-xl shadow-md shadow-blue-900/10 group-hover:scale-105 transition-transform duration-200">
-              G
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-lg sm:text-xl text-[#0A192F] tracking-tight leading-none group-hover:text-blue-700 transition-colors">
-                GARVI EDUCATION
-              </span>
-              <span className="text-[10px] tracking-wider font-semibold text-slate-500 uppercase mt-0.5">
-                Rewa, Madhya Pradesh
-              </span>
-            </div>
+          {/* Official Garvi Education Logo */}
+          <Link href="/" className="group flex items-center">
+            <GarviLogo size="md" />
           </Link>
 
           {/* Desktop Navigation Links */}
@@ -61,14 +52,14 @@ export function Navbar({ onRegisterClick, price = 199 }: NavbarProps) {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-blue-700 transition-colors py-1"
+                className="text-sm font-semibold text-slate-600 hover:text-blue-700 transition-colors py-1"
               >
                 {link.label}
               </a>
             ))}
           </div>
 
-          {/* Action CTA */}
+          {/* Action CTA with 2-Second Vibration Animation */}
           <div className="hidden sm:flex items-center gap-3">
             <a
               href="https://wa.me/919425100000?text=Hello%20Garvi%20Education,%20I%20have%20an%20inquiry%20about%20the%20School%20Management%20Workshop."
@@ -83,21 +74,21 @@ export function Navbar({ onRegisterClick, price = 199 }: NavbarProps) {
             <button
               id="nav-register-btn"
               onClick={onRegisterClick}
-              className="inline-flex items-center gap-2 bg-[#0A192F] hover:bg-[#152544] text-white text-sm font-semibold px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all active:scale-95 group"
+              className="animate-vibrate-2s inline-flex items-center gap-2 bg-[#0A192F] hover:bg-[#152544] text-white text-sm font-bold px-5 py-2.5 rounded-xl transition-all active:scale-95 group cursor-pointer"
             >
               <span>Register Now</span>
-              <span className="bg-blue-600 text-white text-xs px-2 py-0.5 rounded font-bold">
+              <span className="bg-blue-600 text-white text-xs px-2 py-0.5 rounded font-extrabold">
                 ₹{price}
               </span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button with Vibrating CTA */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={onRegisterClick}
-              className="sm:hidden bg-[#0A192F] text-white text-xs font-semibold px-3 py-2 rounded-lg"
+              className="animate-vibrate-2s sm:hidden bg-[#0A192F] text-white text-xs font-bold px-3 py-2 rounded-lg"
             >
               ₹{price} Register
             </button>
@@ -122,7 +113,7 @@ export function Navbar({ onRegisterClick, price = 199 }: NavbarProps) {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-medium text-slate-800 hover:text-blue-700 py-2 border-b border-slate-100"
+                className="text-base font-semibold text-slate-800 hover:text-blue-700 py-2 border-b border-slate-100"
               >
                 {link.label}
               </a>
@@ -134,7 +125,7 @@ export function Navbar({ onRegisterClick, price = 199 }: NavbarProps) {
                   setMobileMenuOpen(false);
                   onRegisterClick();
                 }}
-                className="w-full flex items-center justify-center gap-2 bg-[#0A192F] text-white text-base font-semibold py-3.5 rounded-xl shadow-md"
+                className="animate-vibrate-2s w-full flex items-center justify-center gap-2 bg-[#0A192F] text-white text-base font-bold py-3.5 rounded-xl shadow-md"
               >
                 <span>Register for Workshop</span>
                 <span className="bg-blue-600 text-xs px-2 py-0.5 rounded font-bold">₹{price}</span>

@@ -20,12 +20,11 @@ import {
   ExternalLink,
   Save,
   RotateCcw,
-  Sparkles,
   BarChart3,
-  Calendar,
   Layers,
   ShieldCheck,
 } from 'lucide-react';
+import { GarviLogo } from '@/components/logo';
 
 export default function AdminDashboardPage() {
   const router = useRouter();
@@ -170,15 +169,7 @@ export default function AdminDashboardPage() {
       <header className="bg-[#0A192F] text-white border-b border-slate-800 sticky top-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-black text-lg">
-              G
-            </div>
-            <div>
-              <div className="font-extrabold text-base leading-none">Garvi Education</div>
-              <div className="text-[10px] text-slate-400 font-semibold tracking-wider uppercase mt-0.5">
-                Admin Console • Rewa, MP
-              </div>
-            </div>
+            <GarviLogo variant="light" size="sm" />
           </div>
 
           <div className="flex items-center gap-3 text-xs">

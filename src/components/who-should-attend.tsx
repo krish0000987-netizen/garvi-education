@@ -105,7 +105,7 @@ export function WhoShouldAttend({ onRegisterClick }: { onRegisterClick: () => vo
             <div className="mt-8">
               <button
                 onClick={onRegisterClick}
-                className="inline-flex items-center gap-2 bg-[#0A192F] hover:bg-[#152544] text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-md transition-all active:scale-95"
+                className="animate-vibrate-2s inline-flex items-center gap-2 bg-[#0A192F] hover:bg-[#152544] text-white font-extrabold text-sm px-7 py-3.5 rounded-xl shadow-xl transition-all active:scale-95 cursor-pointer"
               >
                 <span>Reserve Seat for Your Institution — ₹199</span>
                 <ArrowRight className="w-4 h-4" />

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { GarviLogo } from './logo';
 
 interface FinalCtaProps {
   onRegisterClick: () => void;
@@ -20,7 +21,7 @@ export function FinalCta({
         <div className="relative rounded-3xl bg-[#0A192F] overflow-hidden shadow-2xl border border-blue-900/60">
           
           {/* Background image with high contrast dark gradient */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
+          <div className="absolute inset-0 opacity-25 pointer-events-none">
             <Image
               src="/images/school-operations.jpg"
               alt="School administration operations center"
@@ -31,8 +32,9 @@ export function FinalCta({
 
           <div className="relative z-10 px-6 py-16 sm:px-12 sm:py-20 lg:p-20 text-center max-w-3xl mx-auto text-white">
             
-            <div className="inline-flex items-center gap-2 bg-blue-600/30 text-blue-300 px-3.5 py-1.5 rounded-full text-xs font-bold border border-blue-400/20 uppercase tracking-wider mb-6">
-              GARVI EDUCATION • REWA, MADHYA PRADESH
+            {/* Center Garvi Logo in White */}
+            <div className="flex justify-center mb-6">
+              <GarviLogo variant="light" size="lg" />
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6">
@@ -47,7 +49,7 @@ export function FinalCta({
               <button
                 id="final-cta-btn"
                 onClick={onRegisterClick}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-[#0A192F] hover:bg-slate-100 font-extrabold text-base px-8 py-4 rounded-xl shadow-xl transition-all active:scale-95 group"
+                className="animate-vibrate-2s w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white text-[#0A192F] hover:bg-slate-100 font-black text-base px-9 py-4 rounded-xl shadow-2xl transition-all active:scale-95 group cursor-pointer"
               >
                 <span>Register Now for ₹{price}</span>
                 <ArrowRight className="w-5 h-5 text-[#0A192F] group-hover:translate-x-1 transition-transform" />

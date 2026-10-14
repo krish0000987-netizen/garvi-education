@@ -48,7 +48,7 @@ export function StickyMobileCta({ onRegisterClick, price = 199 }: StickyMobileCt
 
           <button
             onClick={onRegisterClick}
-            className="flex-1 inline-flex items-center justify-center gap-2 bg-[#0A192F] active:bg-[#152544] text-white font-bold text-sm py-3 px-4 rounded-xl shadow-md"
+            className="animate-vibrate-2s flex-1 inline-flex items-center justify-center gap-2 bg-[#0A192F] active:bg-[#152544] text-white font-black text-sm py-3.5 px-4 rounded-xl shadow-lg cursor-pointer"
           >
             <span>Register Now</span>
             <ArrowRight className="w-4 h-4" />

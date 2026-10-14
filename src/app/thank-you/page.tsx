@@ -17,6 +17,7 @@ import {
   Sparkles,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { GarviLogo } from '@/components/logo';
 
 function ThankYouContent() {
   const searchParams = useSearchParams();
@@ -104,18 +105,10 @@ END:VCALENDAR`;
       <div className="max-w-3xl mx-auto">
         
         {/* Top Brand Banner */}
-        <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 mb-3">
-            <div className="w-8 h-8 rounded-lg bg-[#0A192F] text-white flex items-center justify-center font-bold text-sm">
-              G
-            </div>
-            <span className="font-extrabold text-base text-[#0A192F] tracking-tight">
-              GARVI EDUCATION
-            </span>
+        <div className="flex justify-center mb-8">
+          <Link href="/" className="group">
+            <GarviLogo size="lg" />
           </Link>
-          <div className="text-xs font-semibold uppercase text-slate-400 tracking-wider">
-            Rewa, Madhya Pradesh
-          </div>
         </div>
 
         {/* Success Card */}
@@ -161,7 +154,7 @@ END:VCALENDAR`;
                 href={whatsappGroupLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold text-base px-8 py-4 rounded-xl shadow-lg shadow-emerald-600/25 transition-all active:scale-95"
+                className="animate-vibrate-2s inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-extrabold text-base px-8 py-4 rounded-xl shadow-xl transition-all active:scale-95 cursor-pointer"
               >
                 <MessageSquare className="w-5 h-5 fill-white" />
                 <span>Join Official WhatsApp Group</span>

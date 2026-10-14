@@ -1,7 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle, Phone } from 'lucide-react';
+import Image from 'next/image';
+import { ChevronDown, HelpCircle, Phone, MessageSquare } from 'lucide-react';
 
 interface FaqAccordionProps {
   price?: number;
@@ -120,27 +121,53 @@ export function FaqAccordion({ price = 199, workshopDate = 'Saturday, 25 October
           })}
         </div>
 
-        {/* Need more help support box */}
-        <div className="mt-12 text-center bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-left">
-            <div className="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center flex-shrink-0">
-              <HelpCircle className="w-5 h-5" />
+        {/* Need more help visual support box with coordinator photo */}
+        <div className="mt-14 rounded-3xl bg-gradient-to-br from-[#0A192F] via-[#0E2346] to-[#1E3A8A] text-white p-6 sm:p-8 shadow-xl border border-blue-900/40 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            
+            <div className="md:col-span-4 relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/20 shadow-lg">
+              <Image
+                src="/images/support-coordinator.jpg"
+                alt="Garvi Education academic coordinator at Rewa support desk"
+                fill
+                sizes="(max-width: 768px) 100vw, 250px"
+                className="object-cover"
+              />
+              <div className="absolute bottom-2 left-2 right-2 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded text-[10px] font-semibold text-white text-center">
+                Rewa Coordination Desk
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-slate-900 text-sm">Still have a question?</h4>
-              <p className="text-xs text-slate-500">Our Rewa academic team is here to assist you.</p>
-            </div>
-          </div>
 
-          <a
-            href="https://wa.me/919425100000?text=Hello%20Garvi%20Education,%20I%20have%20a%20question%20about%20the%20School%20Management%20Workshop."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-4 py-2.5 rounded-xl border border-emerald-200 transition-colors"
-          >
-            <Phone className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Chat on WhatsApp</span>
-          </a>
+            <div className="md:col-span-8 flex flex-col justify-between h-full">
+              <div>
+                <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-cyan-300 uppercase tracking-wider mb-2 bg-cyan-950/60 px-2.5 py-0.5 rounded-full border border-cyan-800/60">
+                  <span>Direct Rewa Support Desk</span>
+                </div>
+                <h4 className="font-extrabold text-white text-lg sm:text-xl">
+                  Still have questions before registering?
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+                  Our academic coordination team in Rewa is available Mon–Sat to assist your school with registration, payment verification, or group bookings.
+                </p>
+              </div>
+
+              <div className="mt-5 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://wa.me/919425100000?text=Hello%20Garvi%20Education,%20I%20have%20a%20question%20about%20the%20School%20Management%20Workshop."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="animate-vibrate-2s inline-flex items-center gap-2 text-sm font-bold text-[#0A192F] bg-white hover:bg-slate-100 px-6 py-3 rounded-xl shadow-lg transition-all active:scale-95 whitespace-nowrap cursor-pointer"
+                >
+                  <Phone className="w-4 h-4 text-emerald-600" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+                <span className="text-xs text-slate-400">
+                  Official Helpline: +91 94251 00000
+                </span>
+              </div>
+            </div>
+
+          </div>
         </div>
 
       </div>

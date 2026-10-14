@@ -1,5 +1,6 @@
 import React from 'react';
-import { CheckCircle2, ShieldCheck, ArrowRight, Lock, Sparkles } from 'lucide-react';
+import Image from 'next/image';
+import { CheckCircle2, ShieldCheck, ArrowRight, Lock, Sparkles, Award, FileSpreadsheet } from 'lucide-react';
 
 interface PricingSectionProps {
   onRegisterClick: () => void;
@@ -49,12 +50,44 @@ export function PricingSection({
               <Sparkles className="w-4 h-4 text-cyan-300" />
               <span>Executive School Management Series</span>
             </div>
-            <div className="text-slate-300">
+            <div className="text-slate-300 font-medium">
               {workshopDate} • {workshopTime}
             </div>
           </div>
 
           <div className="p-8 sm:p-12">
+            
+            {/* Visual Certificate & Toolkit Showcase Card */}
+            <div className="mb-8 rounded-2xl overflow-hidden border border-blue-200 shadow-md bg-gradient-to-br from-blue-50 to-indigo-50/40">
+              <div className="grid grid-cols-1 sm:grid-cols-12 items-center">
+                <div className="sm:col-span-5 relative aspect-[16/10] sm:h-full min-h-[170px]">
+                  <Image
+                    src="/images/certificate-toolkit.jpg"
+                    alt="Garvi Education Certificate of Completion and School Management Toolkit"
+                    fill
+                    sizes="(max-width: 640px) 100vw, 300px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="sm:col-span-7 p-5">
+                  <div className="flex items-center justify-between gap-2 mb-1.5">
+                    <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider bg-blue-100/70 px-2.5 py-0.5 rounded">
+                      Included with ₹{price} Registration
+                    </span>
+                    <span className="text-xs font-bold text-slate-500 line-through">
+                      ₹1,499 Value
+                    </span>
+                  </div>
+                  <h4 className="font-extrabold text-slate-900 text-sm sm:text-base">
+                    Verified Certificate & Digital Operations Toolkit
+                  </h4>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Personalized institutional certificate issued to your name, plus ready-to-deploy digital fee sheets and attendance registers.
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row sm:items-baseline justify-between pb-8 border-b border-slate-100 gap-4">
               <div>
                 <h3 className="text-2xl font-black text-[#0A192F]">
@@ -100,12 +133,12 @@ export function PricingSection({
               </div>
             </div>
 
-            {/* CTA and Security */}
+            {/* CTA and Security with 2-Second Vibration */}
             <div className="pt-6 border-t border-slate-100 flex flex-col items-center">
               <button
                 id="pricing-cta-btn"
                 onClick={onRegisterClick}
-                className="w-full sm:w-auto sm:min-w-[320px] inline-flex items-center justify-center gap-3 bg-[#0A192F] hover:bg-[#152544] text-white font-bold text-base px-8 py-4 rounded-xl shadow-xl shadow-blue-950/20 transition-all active:scale-95 group"
+                className="animate-vibrate-2s w-full sm:w-auto sm:min-w-[340px] inline-flex items-center justify-center gap-3 bg-[#0A192F] hover:bg-[#152544] text-white font-black text-base px-8 py-4 rounded-xl shadow-2xl transition-all active:scale-95 group cursor-pointer"
               >
                 <span>Secure My Registration — ₹{price}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -16,6 +16,7 @@ import {
 import confetti from 'canvas-confetti';
 import { captureUtmParamsFromUrl, UtmParams } from '@/lib/utm';
 import { fbqTrackLead, fbqTrackInitiateCheckout, fbqTrackPurchase } from '@/components/analytics/meta-pixel';
+import { GarviLogo } from './logo';
 
 interface RegistrationModalProps {
   isOpen: boolean;
@@ -259,12 +260,11 @@ export function RegistrationModal({
             <X className="w-5 h-5" />
           </button>
 
-          <div className="inline-flex items-center gap-1.5 bg-blue-600/30 text-blue-300 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border border-blue-400/20 mb-2">
-            <Sparkles className="w-3 h-3 text-cyan-300" />
-            <span>Garvi Education • Rewa</span>
+          <div className="mb-4">
+            <GarviLogo variant="light" size="sm" />
           </div>
 
-          <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
+          <h3 className="text-xl sm:text-2xl font-black tracking-tight">
             Register for the Workshop
           </h3>
 
@@ -459,7 +459,7 @@ export function RegistrationModal({
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#0A192F] hover:bg-[#152544] text-white font-bold text-sm sm:text-base py-3.5 px-6 rounded-xl shadow-lg shadow-blue-950/20 transition-all active:scale-95 disabled:opacity-60"
+                  className="animate-vibrate-2s w-full inline-flex items-center justify-center gap-2 bg-[#0A192F] hover:bg-[#152544] text-white font-black text-sm sm:text-base py-4 px-6 rounded-xl shadow-xl transition-all active:scale-95 disabled:opacity-60 cursor-pointer"
                 >
                   {isLoading ? (
                     <>

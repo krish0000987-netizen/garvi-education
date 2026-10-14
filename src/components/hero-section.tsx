@@ -92,7 +92,7 @@ export function HeroSection({
               <button
                 id="hero-primary-cta"
                 onClick={onRegisterClick}
-                className="inline-flex items-center justify-center gap-3 bg-[#0A192F] hover:bg-[#152544] text-white font-semibold text-base px-8 py-4 rounded-xl shadow-lg shadow-blue-950/15 hover:shadow-xl hover:shadow-blue-950/25 transition-all duration-200 active:scale-[0.98] group"
+                className="animate-vibrate-2s inline-flex items-center justify-center gap-3 bg-[#0A192F] hover:bg-[#152544] text-white font-extrabold text-base px-8 py-4 rounded-xl shadow-xl transition-all duration-200 active:scale-[0.98] group cursor-pointer"
               >
                 <span>Register for Just ₹{price}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -175,7 +175,7 @@ export function HeroSection({
               </div>
 
               {/* Floating Card 1: Fee Collection Recovery (Top Right) */}
-              <div className="absolute -top-6 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-slate-200/90 shadow-xl max-w-[210px] hidden sm:block animate-pulse-subtle">
+              <div className="animate-float absolute -top-6 -right-4 sm:-right-6 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-slate-200/90 shadow-xl max-w-[210px] hidden sm:block">
                 <div className="flex items-center gap-2 mb-1.5">
                   <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
                     <TrendingUp className="w-4 h-4" />
@@ -187,7 +187,7 @@ export function HeroSection({
               </div>
 
               {/* Floating Card 2: Student Attendance Cloud Sync (Bottom Left) */}
-              <div className="absolute -bottom-6 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-slate-200/90 shadow-xl max-w-[220px] hidden sm:block">
+              <div className="animate-float-delayed absolute -bottom-6 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-3.5 rounded-xl border border-slate-200/90 shadow-xl max-w-[220px] hidden sm:block">
                 <div className="flex items-center gap-2 mb-1.5">
                   <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
                     <Users className="w-4 h-4" />

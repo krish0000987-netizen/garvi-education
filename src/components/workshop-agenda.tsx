@@ -1,5 +1,6 @@
 import React from 'react';
-import { Clock, CheckCircle, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Clock, CheckCircle, ArrowRight, Video } from 'lucide-react';
 
 export function WorkshopAgenda({ onRegisterClick }: { onRegisterClick: () => void }) {
   const sessions = [
@@ -43,7 +44,7 @@ export function WorkshopAgenda({ onRegisterClick }: { onRegisterClick: () => voi
 
   return (
     <section id="agenda" className="py-24 bg-slate-50/60 relative">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -58,58 +59,97 @@ export function WorkshopAgenda({ onRegisterClick }: { onRegisterClick: () => voi
           </p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative pl-6 sm:pl-8 border-l-2 border-blue-200 space-y-10">
-          {sessions.map((item, index) => (
-            <div key={index} className="relative group">
-              
-              {/* Timeline marker node */}
-              <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-blue-600 group-hover:border-cyan-500 transition-colors shadow-sm" />
-
-              {/* Session Card */}
-              <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-blue-700 uppercase bg-blue-50 px-2.5 py-1 rounded">
-                      {item.sessionNumber}
-                    </span>
-                    <span className="text-xs text-slate-500 flex items-center gap-1">
-                      <Clock className="w-3.5 h-3.5 text-slate-400" />
-                      {item.duration}
-                    </span>
-                  </div>
-                  <div className="text-xs sm:text-sm font-semibold text-slate-900 bg-slate-100 px-3 py-1 rounded-full">
-                    {item.time}
-                  </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Left Column: Visual Collaboration Photo Banner */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-white aspect-[4/3]">
+              <Image
+                src="/images/principal-collaboration.jpg"
+                alt="Principal and administrator reviewing school agenda in contemporary school office"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl border border-white/50 text-xs text-slate-800">
+                <div className="flex items-center gap-2 font-bold text-[#0A192F] text-sm mb-1">
+                  <Video className="w-4 h-4 text-blue-600" />
+                  <span>Live Interactive Masterclass</span>
                 </div>
-
-                <h3 className="text-lg sm:text-xl font-bold text-[#0A192F] mb-2">
-                  {item.title}
-                </h3>
-
-                <p className="text-sm text-slate-600 leading-relaxed mb-4">
-                  {item.description}
+                <p className="text-slate-600">
+                  Every session includes live screen demonstrations, case studies, and interactive Q&A.
                 </p>
-
-                <div className="flex items-center gap-2 bg-emerald-50/70 border border-emerald-200/60 rounded-xl px-3.5 py-2 text-xs font-semibold text-emerald-800">
-                  <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                  <span>Key Outcome: {item.outcome}</span>
-                </div>
               </div>
-
             </div>
-          ))}
-        </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-14 text-center">
-          <button
-            onClick={onRegisterClick}
-            className="inline-flex items-center gap-2 bg-[#0A192F] hover:bg-[#152544] text-white font-semibold text-sm sm:text-base px-8 py-3.5 rounded-xl shadow-md transition-all active:scale-95"
-          >
-            <span>Book Your Spot for This Session — ₹199</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+            <div className="p-5 rounded-2xl bg-blue-50/70 border border-blue-200/60 text-xs text-blue-950 space-y-2">
+              <span className="font-bold text-sm block text-blue-900">
+                Batch Details:
+              </span>
+              <p>• Date: Saturday, 25 October 2026</p>
+              <p>• Time: 6:00 PM – 8:00 PM IST (Asia/Kolkata)</p>
+              <p>• Format: Live Interactive Stream + WhatsApp Community</p>
+            </div>
+          </div>
+
+          {/* Right Column: Timeline */}
+          <div className="lg:col-span-7">
+            <div className="relative pl-6 sm:pl-8 border-l-2 border-blue-200 space-y-8">
+              {sessions.map((item, index) => (
+                <div key={index} className="relative group">
+                  
+                  {/* Timeline marker node */}
+                  <div className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-blue-600 group-hover:border-cyan-500 transition-colors shadow-sm" />
+
+                  {/* Session Card */}
+                  <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-xs hover:shadow-md transition-shadow">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold text-blue-700 uppercase bg-blue-50 px-2.5 py-1 rounded">
+                          {item.sessionNumber}
+                        </span>
+                        <span className="text-xs text-slate-500 flex items-center gap-1">
+                          <Clock className="w-3.5 h-3.5 text-slate-400" />
+                          {item.duration}
+                        </span>
+                      </div>
+                      <div className="text-xs sm:text-sm font-semibold text-slate-900 bg-slate-100 px-3 py-1 rounded-full">
+                        {item.time}
+                      </div>
+                    </div>
+
+                    <h3 className="text-base sm:text-lg font-bold text-[#0A192F] mb-1.5">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+                      {item.description}
+                    </p>
+
+                    <div className="flex items-center gap-2 bg-emerald-50/70 border border-emerald-200/60 rounded-xl px-3 py-1.5 text-xs font-semibold text-emerald-800">
+                      <CheckCircle className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
+                      <span>Key Outcome: {item.outcome}</span>
+                    </div>
+                  </div>
+
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Vibrating CTA */}
+            <div className="mt-10">
+              <button
+                onClick={onRegisterClick}
+                className="animate-vibrate-2s w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#0A192F] hover:bg-[#152544] text-white font-extrabold text-sm sm:text-base px-8 py-4 rounded-xl shadow-xl transition-all active:scale-95 cursor-pointer"
+              >
+                <span>Book Your Spot for This Session — ₹199</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+
+          </div>
+
         </div>
 
       </div>
