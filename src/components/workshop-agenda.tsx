@@ -62,7 +62,7 @@ export function WorkshopAgenda({ onRegisterClick }: { onRegisterClick: () => voi
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Visual Collaboration Photo Banner */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-6 scroll-reveal-left">
             <div className="relative rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-white aspect-[4/3]">
               <Image
                 src="/images/principal-collaboration.jpg"
@@ -94,7 +94,7 @@ export function WorkshopAgenda({ onRegisterClick }: { onRegisterClick: () => voi
           </div>
 
           {/* Right Column: Timeline */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 scroll-reveal-right">
             <div className="relative pl-6 sm:pl-8 border-l-2 border-blue-200 space-y-8">
               {sessions.map((item, index) => (
                 <div key={index} className="relative group">

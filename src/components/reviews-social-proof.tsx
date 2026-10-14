@@ -57,7 +57,7 @@ export function ReviewsSocialProof() {
         </div>
 
         {/* Visual Trust & Verification Showcase Banner */}
-        <div className="mb-14 rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl bg-gradient-to-r from-[#0A192F] via-[#0E2346] to-[#1E3A8A] text-white">
+        <div className="mb-14 rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl bg-gradient-to-r from-[#0A192F] via-[#0E2346] to-[#1E3A8A] text-white scroll-reveal-left">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             <div className="lg:col-span-5 relative aspect-[16/10] lg:h-full min-h-[220px]">
               <Image
@@ -112,7 +112,7 @@ export function ReviewsSocialProof() {
         </div>
 
         {/* Testimonials Grid with Visual Avatars & Verified Tags */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 scroll-reveal-right">
           {testimonials.map((item, idx) => (
             <div
               key={idx}

@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { MetaPixel } from '@/components/analytics/meta-pixel';
+import { CustomCursor } from '@/components/custom-cursor';
+import { PageLoader } from '@/components/page-loader';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -74,6 +76,10 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 selection:text-blue-900 font-sans">
+        {/* Full-screen Loading Animation & Top Bar Glide on every refresh */}
+        <PageLoader />
+        {/* Bespoke Interactive Hover Cursor */}
+        <CustomCursor />
         <MetaPixel />
         {children}
         {/* Razorpay Checkout Script */}

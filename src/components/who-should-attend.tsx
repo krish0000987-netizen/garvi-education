@@ -41,7 +41,7 @@ export function WhoShouldAttend({ onRegisterClick }: { onRegisterClick: () => vo
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Visual of Indian School Leaders */}
-          <div className="lg:col-span-5 relative order-2 lg:order-1">
+          <div className="lg:col-span-5 relative order-2 lg:order-1 scroll-reveal-left">
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/90 aspect-[4/3] bg-slate-100">
               <Image
                 src="/images/school-leaders.jpg"
@@ -64,7 +64,7 @@ export function WhoShouldAttend({ onRegisterClick }: { onRegisterClick: () => vo
           </div>
 
           {/* Right Column: Roles Breakdown */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <div className="lg:col-span-7 order-1 lg:order-2 scroll-reveal-right">
             <span className="text-xs font-bold tracking-wider text-blue-700 uppercase bg-blue-50 px-3.5 py-1 rounded-full border border-blue-200/60">
               AUDIENCE PROFILE
             </span>

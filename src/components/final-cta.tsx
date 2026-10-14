@@ -18,7 +18,7 @@ export function FinalCta({
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="relative rounded-3xl bg-[#0A192F] overflow-hidden shadow-2xl border border-blue-900/60">
+        <div className="relative rounded-3xl bg-[#0A192F] overflow-hidden shadow-2xl border border-blue-900/60 scroll-reveal-scale">
           
           {/* Background image with high contrast dark gradient */}
           <div className="absolute inset-0 opacity-25 pointer-events-none">

@@ -56,7 +56,7 @@ export function ProblemOpportunity({ onRegisterClick }: { onRegisterClick: () =>
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Real School Paperwork Photo */}
-            <div className="lg:col-span-5 relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full min-h-[300px]">
+            <div className="lg:col-span-5 relative aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-full min-h-[300px] scroll-reveal-left">
               <Image
                 src="/images/school-paperwork.jpg"
                 alt="Traditional Indian school office with stacks of paper attendance registers and admission files"
@@ -77,7 +77,7 @@ export function ProblemOpportunity({ onRegisterClick }: { onRegisterClick: () =>
             </div>
 
             {/* Problem Highlight Cards */}
-            <div className="lg:col-span-7 p-6 sm:p-8">
+            <div className="lg:col-span-7 p-6 sm:p-8 scroll-reveal-right">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {problems.map((prob, index) => {
                   const Icon = prob.icon;
@@ -110,7 +110,7 @@ export function ProblemOpportunity({ onRegisterClick }: { onRegisterClick: () =>
         </div>
 
         {/* The Opportunity / Solution Box with Modern Visual Elements */}
-        <div className="rounded-3xl bg-gradient-to-br from-[#0A192F] via-[#0E2346] to-[#122E5C] text-white p-8 sm:p-12 shadow-xl border border-blue-900/50 relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-br from-[#0A192F] via-[#0E2346] to-[#122E5C] text-white p-8 sm:p-12 shadow-xl border border-blue-900/50 relative overflow-hidden scroll-reveal-scale">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             <div className="lg:col-span-8">

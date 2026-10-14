@@ -94,7 +94,7 @@ export function WorkshopOutcomes({ onRegisterClick }: { onRegisterClick: () => v
         </div>
 
         {/* Visual Live Operations Showcase Banner */}
-        <div className="mb-14 rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl bg-[#0A192F] relative group">
+        <div className="mb-14 rounded-3xl overflow-hidden border border-slate-200/90 shadow-xl bg-[#0A192F] relative group scroll-reveal-scale">
           <div className="relative aspect-[21/9] sm:aspect-[24/9] w-full min-h-[220px]">
             <Image
               src="/images/school-operations.jpg"
@@ -130,12 +130,13 @@ export function WorkshopOutcomes({ onRegisterClick }: { onRegisterClick: () => v
 
         {/* 6-Card Grid with Visual Badges */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {outcomes.map((item) => {
+          {outcomes.map((item, idx) => {
             const Icon = item.icon;
+            const revealDir = idx % 2 === 0 ? 'scroll-reveal-left' : 'scroll-reveal-right';
             return (
               <div
                 key={item.number}
-                className="bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                className={`bg-white rounded-2xl p-7 border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-blue-300 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden ${revealDir}`}
               >
                 {/* Visual subtle gradient corner */}
                 <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${item.gradient} rounded-bl-full pointer-events-none`} />

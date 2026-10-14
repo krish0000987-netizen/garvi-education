@@ -47,7 +47,7 @@ export function HeroSection({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Value Proposition & Conversion */}
-          <div className="lg:col-span-7 flex flex-col justify-center text-left">
+          <div className="lg:col-span-7 flex flex-col justify-center text-left scroll-reveal-left">
             
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 self-start bg-blue-50 border border-blue-200/80 rounded-full px-3.5 py-1.5 mb-5 shadow-xs">
@@ -142,7 +142,7 @@ export function HeroSection({
           </div>
 
           {/* Right Column: Hero Visual with Layered Floating Cards */}
-          <div className="lg:col-span-5 relative mt-6 lg:mt-0">
+          <div className="lg:col-span-5 relative mt-6 lg:mt-0 scroll-reveal-right">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               
               {/* Outer Glow / Framing */}

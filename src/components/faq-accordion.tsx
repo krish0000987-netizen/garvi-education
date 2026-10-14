@@ -80,7 +80,7 @@ export function FaqAccordion({ price = 199, workshopDate = 'Saturday, 25 October
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-4 scroll-reveal-up">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
@@ -122,7 +122,7 @@ export function FaqAccordion({ price = 199, workshopDate = 'Saturday, 25 October
         </div>
 
         {/* Need more help visual support box with coordinator photo */}
-        <div className="mt-14 rounded-3xl bg-gradient-to-br from-[#0A192F] via-[#0E2346] to-[#1E3A8A] text-white p-6 sm:p-8 shadow-xl border border-blue-900/40 overflow-hidden">
+        <div className="mt-14 rounded-3xl bg-gradient-to-br from-[#0A192F] via-[#0E2346] to-[#1E3A8A] text-white p-6 sm:p-8 shadow-xl border border-blue-900/40 overflow-hidden scroll-reveal-left">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
             
             <div className="md:col-span-4 relative aspect-[4/3] rounded-2xl overflow-hidden border border-white/20 shadow-lg">

@@ -17,7 +17,8 @@ export function ScrollEffects() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
-    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const selector = '.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right, .scroll-reveal-up, .scroll-reveal-scale';
+    const revealElements = document.querySelectorAll(selector);
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -28,7 +29,7 @@ export function ScrollEffects() {
         });
       },
       {
-        threshold: 0.05,
+        threshold: 0.08,
         rootMargin: '0px 0px -40px 0px',
       }
     );

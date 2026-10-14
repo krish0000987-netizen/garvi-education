@@ -42,7 +42,7 @@ export function PricingSection({
         </div>
 
         {/* Pricing Card */}
-        <div className="bg-white rounded-3xl border-2 border-blue-600/30 shadow-2xl overflow-hidden relative">
+        <div className="bg-white rounded-3xl border-2 border-blue-600/30 shadow-2xl overflow-hidden relative scroll-reveal-scale">
           
           {/* Top highlight bar */}
           <div className="bg-[#0A192F] text-white py-3.5 px-6 flex flex-wrap items-center justify-between text-xs sm:text-sm">
@@ -58,7 +58,7 @@ export function PricingSection({
           <div className="p-8 sm:p-12">
             
             {/* Visual Certificate & Toolkit Showcase Card */}
-            <div className="mb-8 rounded-2xl overflow-hidden border border-blue-200 shadow-md bg-gradient-to-br from-blue-50 to-indigo-50/40">
+            <div className="mb-8 rounded-2xl overflow-hidden border border-blue-200 shadow-md bg-gradient-to-br from-blue-50 to-indigo-50/40 scroll-reveal-left">
               <div className="grid grid-cols-1 sm:grid-cols-12 items-center">
                 <div className="sm:col-span-5 relative aspect-[16/10] sm:h-full min-h-[170px]">
                   <Image

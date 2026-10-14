@@ -43,7 +43,7 @@ export default function GarviLandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-white flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
       
       {/* Dynamic Top Reading Progress Bar & Scroll Controller */}
       <ScrollEffects />

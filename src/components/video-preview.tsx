@@ -35,7 +35,7 @@ export function VideoPreview({
         </div>
 
         {/* Video Player Card */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto scroll-reveal-scale">
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/90 aspect-video bg-[#0A192F] group">
             
             {/* Thumbnail Image */}
