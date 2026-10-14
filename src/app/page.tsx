@@ -1,69 +1,152 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import React, { useState, useEffect } from 'react';
+import { AnnouncementBar } from '@/components/announcement-bar';
+import { Navbar } from '@/components/navbar';
+import { HeroSection } from '@/components/hero-section';
+import { ProblemOpportunity } from '@/components/problem-opportunity';
+import { WorkshopOutcomes } from '@/components/workshop-outcomes';
+import { VideoPreview } from '@/components/video-preview';
+import { WhoShouldAttend } from '@/components/who-should-attend';
+import { WorkshopAgenda } from '@/components/workshop-agenda';
+import { ReviewsSocialProof } from '@/components/reviews-social-proof';
+import { PricingSection } from '@/components/pricing-section';
+import { FaqAccordion } from '@/components/faq-accordion';
+import { FinalCta } from '@/components/final-cta';
+import { Footer } from '@/components/footer';
+import { RegistrationModal } from '@/components/registration-modal';
+import { StickyMobileCta } from '@/components/sticky-mobile-cta';
+import { captureUtmParamsFromUrl } from '@/lib/utm';
+
+export default function GarviLandingPage() {
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  // Settings state (can also be loaded dynamically or fall back to defaults)
+  const workshopDate = 'Saturday, 25 October 2026';
+  const workshopTime = '6:00 PM IST';
+  const duration = '2 Hours Live Interactive Session';
+  const price = 199;
+
+  useEffect(() => {
+    // Capture and persist UTM tags from URL on mount
+    captureUtmParamsFromUrl();
+  }, []);
+
+  const openRegisterModal = () => {
+    setIsRegisterModalOpen(true);
+  };
+
+  const closeRegisterModal = () => {
+    setIsRegisterModalOpen(false);
+  };
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="min-h-screen bg-white flex flex-col antialiased selection:bg-blue-100 selection:text-blue-900">
+      
+      {/* Section 1 — Premium Announcement Bar */}
+      <AnnouncementBar
+        workshopDate={workshopDate}
+        workshopTime={workshopTime}
+      />
+
+      {/* Section 2 — Minimal Premium Navigation */}
+      <Navbar
+        onRegisterClick={openRegisterModal}
+        price={price}
+      />
+
+      {/* Main Page Flow */}
+      <main className="flex-1">
+        
+        {/* Section 3 — High-Converting Hero Section */}
+        <HeroSection
+          onRegisterClick={openRegisterModal}
+          onWatchVideoClick={() => {
+            const videoElem = document.getElementById('open-video-preview-btn');
+            if (videoElem) {
+              videoElem.scrollIntoView({ behavior: 'smooth' });
+              setTimeout(() => videoElem.click(), 500);
+            } else {
+              openRegisterModal();
+            }
+          }}
+          workshopDate={workshopDate}
+          workshopTime={workshopTime}
+          duration={duration}
+          price={price}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* Section 4 — Problem and Opportunity */}
+        <ProblemOpportunity
+          onRegisterClick={openRegisterModal}
+        />
+
+        {/* Section 5 — Workshop Outcomes */}
+        <WorkshopOutcomes
+          onRegisterClick={openRegisterModal}
+        />
+
+        {/* Section 6 — Workshop Video Preview */}
+        <VideoPreview
+          onRegisterClick={openRegisterModal}
+          price={price}
+        />
+
+        {/* Section 7 — Who Should Attend? */}
+        <WhoShouldAttend
+          onRegisterClick={openRegisterModal}
+        />
+
+        {/* Section 8 — Workshop Agenda */}
+        <WorkshopAgenda
+          onRegisterClick={openRegisterModal}
+        />
+
+        {/* Section 9 — Reviews and Social Proof */}
+        <ReviewsSocialProof />
+
+        {/* Section 10 — Workshop Pricing */}
+        <PricingSection
+          onRegisterClick={openRegisterModal}
+          price={price}
+          workshopDate={workshopDate}
+          workshopTime={workshopTime}
+        />
+
+        {/* Section 11 — FAQ Accordion */}
+        <FaqAccordion
+          price={price}
+          workshopDate={workshopDate}
+        />
+
+        {/* Section 12 — Final Conversion Section */}
+        <FinalCta
+          onRegisterClick={openRegisterModal}
+          price={price}
+          workshopDate={workshopDate}
+        />
+
       </main>
+
+      {/* Section 13 — Footer */}
+      <Footer />
+
+      {/* Sticky Mobile Registration CTA */}
+      <StickyMobileCta
+        onRegisterClick={openRegisterModal}
+        price={price}
+      />
+
+      {/* Registration & Checkout Modal */}
+      <RegistrationModal
+        isOpen={isRegisterModalOpen}
+        onClose={closeRegisterModal}
+        price={price}
+        workshopDate={workshopDate}
+        workshopTime={workshopTime}
+      />
+
     </div>
   );
 }
